@@ -7,11 +7,12 @@ import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 
 
-// apollo client configuration to includer headers & cache
+// endpoint URL
 const httpLink = createHttpLink({
-  uri: 'https://myapi.com/graphql',
+  uri: '/graphql',
 });
 
+// middleware for JWT token
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('token');
   return {
@@ -22,7 +23,7 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-// middleware
+// apollo cache setting
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
