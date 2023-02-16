@@ -7,6 +7,26 @@ import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 
 
+// apollo client configuration to includer headers & cache
+const httpLink = createHttpLink({
+  uri: 'https://myapi.com/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+// middleware
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 
 function App() {
