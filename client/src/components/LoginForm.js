@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 
-// import { loginUser } from '../utils/API'; I may just delete that file...doesn't really need to be there...
+// import { loginUser } from '../utils/API'; 
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
@@ -40,22 +40,18 @@ const LoginForm = () => {
     }
 
     try {
-      const response = await loginUser({
-        variables: {
-          email: userFormData.email,
-          password: userFormData.password,
-        },
+      const { data } = await login({
+        variables: { ...userFormData },
       });
-      const { token, user } = response.data.login;
-      console.log(user);
-      Auth.login(token);
-    } catch (err) {
-      console.error(err);
-      setShowAlert(true);
+
+      console.log(data);
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
     }
 
+    // clear form values
     setUserFormData({
-      username: '',
       email: '',
       password: '',
     });
