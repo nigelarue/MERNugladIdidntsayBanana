@@ -1,10 +1,21 @@
 
-# Book Search Engine Starter Code
+# Book Search Engine
 
+## Table of Contents:
 
-a fully functioning Google Books API search engine built with a RESTful API, and refactor it to be a GraphQL API built with Apollo Server. The app was built using the MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API. It's already set up to allow users to save book searches to the back end. 
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Issues](#Issues)
+5. [Contributing](#contributing)
+6. [Links](#links)
+7. [Issues](#Issues)
 
-To complete the updates to the code to be a GraphQL API build with Apollo Server, the following updates needed to be done:
+## Description
+
+This project is an already functioning RESTful API Google Books search engine. I have reworked the code to run as a GraphQL API built with Apollo Server. The app was built using the MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API.
+
+To complete the updates to the code to be a GraphQL API build with Apollo Server, the following updates were made:
 
 1. Created Apollo Server schema and used GraphQL queries and mutations to fetch and modify data, replacing the existing RESTful API.
 
@@ -12,15 +23,18 @@ To complete the updates to the code to be a GraphQL API build with Apollo Server
 
 3. Created an Apollo Provider so that requests can communicate with an Apollo Server.
 
-4. Deployed to Heroku with a MongoDB database using MongoDB Atlas. Use the [Deploy with Heroku and MongoDB Atlas](https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-heroku-and-mongodb-atlas) walkthrough for instructions.
+4. Deployed to Heroku with a MongoDB database using MongoDB Atlas. 
 
-## Issues
+## Installation
 
-As is common with a lot of older code, many packages and components of those packages are deprecated. I ran into this issue a lot with React's findDOMNode when I ran tests and development (see below photo). 
-![DOMNode Error](./assets/error.png).
-![Screenshot of working app](./assets/working_development.png).
+Apollo Client & Server is required to use this app, along with Mongo, Express, React and Node.js.
 
-## User Story
+## Contributing
+
+[Nigel LaRue](https://github.com/nigelarue).
+[Xandromus](https://github.com/coding-boot-camp/solid-broccoli) provided the starter code.
+
+## Given User Story
 
 ```md
 AS AN avid reader
@@ -28,7 +42,7 @@ I WANT to search for new books to read
 SO THAT I can keep a list of books to purchase
 ```
 
-## Acceptance Criteria
+## Given Acceptance Criteria
 
 ```md
 GIVEN a book search engine
@@ -63,5 +77,15 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 ```
 ## Links
 
-[Heroku Link]().
-[GitHub Repo Link]().
+[Heroku Link](https://obscure-garden-85803.herokuapp.com/).
+[GitHub Repo Link](https://github.com/nigelarue/MERNugladIdidntsayBanana).
+
+## Issues
+
+As is common with a lot of older code, many packages and components of those packages are deprecated. I ran into this issue a lot with React's findDOMNode when I ran tests and development (see below photos). Please note that updating the packages might cause errors to propogate. 
+![DOMNode Error in ChromeDev](./assets/error.png).
+![Screenshot of working app](./assets/working_development.png).
+
+## Contact
+
+Please email me at: larue.nigel91@gmail.com or submit a ticket to the GitHub repository for questions or updates.
